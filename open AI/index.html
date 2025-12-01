@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موقع خدمات ومنتجات</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="role-selection" class="center-screen">
+  <h1>مرحبا بك</h1>
+  <button onclick="showAdminPassword()">أنت مسؤول</button>
+  <button onclick="enterClient()">أنت عميل</button>
+</div>
+
+<div id="password-screen" class="hidden center-screen">
+  <h2>ادخل كلمة المرور</h2>
+  <input type="password" id="password-input" placeholder="كلمة المرور">
+  <button onclick="checkPassword()">دخول</button>
+  <p id="password-error" style="color:red;"></p>
+</div>
+
+<div id="admin-panel" class="hidden">
+  <h2>لوحة المسؤول</h2>
+  <label>اسم الخدمة/المنتج: <input type="text" id="item-name"></label><br>
+  <label>وصف: <input type="text" id="item-desc"></label><br>
+  <label>سعر: <input type="number" id="item-price"></label><br>
+  <label>رقم WhatsApp (اختياري): <input type="text" id="item-phone"></label><br>
+  <label>رابط صورة (اختياري): <input type="text" id="item-img"></label><br>
+  <button onclick="addItem()">إضافة الخدمة/المنتج</button>
+  <div id="admin-items-container"></div>
+</div>
+
+<div id="client-panel" class="hidden">
+  <h2>الخدمات والمنتجات</h2>
+  <div id="client-items-container"></div>
+  <h3>المجموع: <span id="total-price">0</span> جنيه</h3>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
